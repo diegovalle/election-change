@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Cambio en voto presidencial 2006-2012</title>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta property="og:description" content="Cambio en voto presidencial"/>
+<meta property="og:image" content="http://3.bp.blogspot.com/-jBnxCX3irr4/US18NhHdJcI/AAAAAAAAGLA/Y2bCH3SLT-k/s400/localhost-8080_maps_secondage.png"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Cambio en voto presidencial"/>
+<meta property="og:title" content="Cambio en voto presidencial"/>
+<meta property="og:url" content="http://www.diegovalle.net/maps/segundaera"/>
+<meta content="808656520" property="fb:admins"/>
+<style>
+body{background-color: #333;color:#999}
+
+
+.social-buttons { display: block; list-style: none; padding: 0; margin: 4px 0 0 25px; }
+.social-buttons > li { display: block; margin: 0; padding-right: 12px; float: left; }
+
+.floatright{
+float:right
+}
+
+#arrowRed path{
+stroke: #000;
+  fill:#E41A1C;
+  stroke-width: .1px;
+}
+#arrowYellow path{
+stroke: #000;
+  fill:#FFFF33;
+  stroke-width: .1px;
+}
+#arrowBlue {
+stroke: #000;
+  fill:#377EB8;
+  stroke-width: .1px;
+}
+i{width:18px;height:18px;float:right;margin-right:8px;}
+text {
+font-style:normal;
+font-weight:normal;
+stroke:#777;
+fill:#777;
+font-family: Georgia;
+font-size: 11px;
+stroke-width:.2px;
+}
+rect {
+  fill: none;
+  pointer-events: all;
+}
+
+.feature {
+  fill: rect;
+    stroke: #ddd;
+    stroke-width: .5px;
+  cursor: pointer;
+}
+
+.feature.active {
+  fill: #222;
+  stroke: #ddd;
+  stroke-width: .5px;
+}
+
+#title {text-align: center;display:block;font-family: Verdana;}
+
+
+h1{font-size:20px;font-family: Verdana;}
+.mesh {
+  fill: none;
+  stroke: #ddd;
+  stroke-width: 1px;
+  stroke-linejoin: round;
+}
+line.slope-line{
+            stroke-width:3px;
+        }
+
+line {fill-opacity:.8;}
+
+div.my_left_box{
+   
+}
+div.my_right_box{
+    position:absolute;
+    top: 40px;
+    right:0px;
+    float: right;
+    padding: 10px;
+    width: 340px;
+    border: 2px solid #999;
+    background-color:#000;
+    z-index: 40;    
+}
+div#legend{
+  margin-top:10px;
+}
+#circles {padding-bottom:20px;font-size:114x}
+</style>
+<body>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="http://d3js.org/queue.v1.min.js"></script>
+  <script src="http://d3js.org/topojson.v0.min.js"></script>
+  
+  <div class="my_left_box">
+    <script src="map.js">
+    </script>
+  </div>
+  
+  <div class="my_right_box">
+    
+    <h1>Cambio en Voto Presidencial</h1>
+    <span id="title">Todo México</span>
+    <div id="slopeGraph"></div>
+    <div id="circles">
+      <div style="float:left">Votos 2006: <span id="total2006">41,791,322</span></div>
+      <div style="float:right">Votos 2012: <span id="total2012">50,323,153</span></div>
+    </div>
+    <hr>
+    <div>
+      <label for="select">Mostrar en el mapa: </label>
+      <select>
+	<option value="PRI">PRI</option>
+	<option value="PRD">PRD</option>
+	<option value="PAN">PAN</option>
+	<option value="BiggestWinner">Mayor Ganador</option>
+	<option value="BiggestLoser">Mayor Perdedor</option>
+      </select>
+    </div>
+    
+    <div id="legend"></div>
+    <script src="legend-es.js">
+    </script>
+    
+    
+    
+    <div>
+      <ul class='social-buttons'>
+	<li>
+	  <div id='fb-root'></div>
+	  <div class='fb-like' data-colorscheme='light' data-layout='box_count' data-show-faces='false' data-width='40' href='http://www.diegovalle.net/maps/segundaera'></div>
+	</li>
+	<li>
+	  <a class='twitter-share-button' data-count='vertical' data-related='diegovalle' data-via='diegovalle' data-text='Cambio en Voto Presidencial 2006-2012' href='https://twitter.com/share'>
+	  </a>
+	</li>
+      </ul>
+    </div>
+    
+    <div class="floatright">
+      <i id="n0" style="background-color: #E41A1C; background-position: initial initial; background-repeat: initial initial;"></i> <span id="t0">PRI</span><br>
+      <i id="n1" style="background-color: #FFFF33; background-position: initial initial; background-repeat: initial initial;"></i> <span id="t1">PRD</span><br>
+      <i id="n2" style="background-color: #377EB8; background-position: initial initial; background-repeat: initial initial;"></i> <span id="t2">PAN</span><br>
+    </div>
+    
+    <script type="text/javascript" src="slopegraph.js">
+    </script>
+  </div>
+  
+  
+  <script id="deferedjs" type="text/javascript">
+    var _gaq=[['_setAccount','UA-100264-1'],['_trackPageview']]; // Change UA-XXXXX-X to be your site's ID
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+    _gaq.push(['_setSiteSpeedSampleRate', 5]);  //Measure Page Speed
+    
+    
+    (function(doc, script) {
+    var js, 
+    fjs = doc.getElementsByTagName(script)[0],
+    frag = doc.createDocumentFragment(),
+    add = function(url, id) {
+    if (doc.getElementById(id)) {return;}
+          js = doc.createElement(script);
+    js.src = url;
+    id && (js.id = id);
+    frag.appendChild( js );
+    };
+    
+    
+    // Facebook SDK
+    add('//connect.facebook.net/en_US/all.js#xfbml=1&appId=212097428820706', 'facebook-jssdk');
+    // Twitter SDK
+    add('//platform.twitter.com/widgets.js');
+    
+    fjs.parentNode.insertBefore(frag, fjs);
+    
+}(document, 'script'));
+  </script>
+  <!--[if lt IE 9 ]>
+      <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
+      <script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
+      <![endif]-->
+</body>
+</html>
