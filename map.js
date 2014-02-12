@@ -99,8 +99,8 @@ var detectCollision = function(d, start, results) {
 
 //read the electoral data and a topojson of mexico's states
 queue()
-    .defer(d3.json, "maps/mx_tj.json") //map with states and municipalities combined
-    .defer(d3.csv, "change.csv")
+    .defer(d3.json, "/maps/change/maps/mx_tj.json") //map with states and municipalities combined
+    .defer(d3.csv, "/maps/change/maps/change.csv")
     .await(ready);
 
 

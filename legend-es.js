@@ -24,11 +24,11 @@ var arrowsPAN = [upArrowPAN, downArrowPRI, downArrowPRD];
 var arrowsBiggestLoser = [downArrowPRI, downArrowPRD, downArrowPAN];
 var arrowsBiggestWinner = [upArrowPRI, upArrowPRD, upArrowPAN];
 
-var legendPRI = ["PRI incremento su porcentaje del voto",
+var legendPRI = ["PRI incrementó su porcentaje del voto",
                  "PRI perdió votos, el PRD ganó más votos",
                  "PRI perdió votos, el PAN ganó más votos"];
 var legendPRD = ["PRD perdió votos, PRI ganó votos",
-		 "PRD incremento su porcentaje del voto",
+		 "PRD incrementó su porcentaje del voto",
                  "PRD perdió votos, el PAN ganó más votos"];
 var legendPAN = ["PAN perdió votos, el PRI ganó más votos",
                  "PAN perdió votos, el PRD ganó más votos",
@@ -36,9 +36,9 @@ var legendPAN = ["PAN perdió votos, el PRI ganó más votos",
 var legendBiggestLoser = ["El PRI perdió más votos",
                    "El PRD perdió más votos",
                    "El PAN perdió más votos"];
-var legendBiggestWinner = ["El PRI incremento más sus votos",
-                    "El PRD incremento más sus votos",
-                    "El PAN incremento más sus votos"];
+var legendBiggestWinner = ["El PRI incrementó más sus votos",
+                    "El PRD incrementó más sus votos",
+                    "El PAN incrementó más sus votos"];
 
 
 var legendText = legendPRI;
